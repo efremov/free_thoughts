@@ -21,7 +21,7 @@
     .navbar-wrapper
       .container
         .navbar.navbar-inverse
-          .navbar-inner
+          .navbar-inner.red-blue-invert
             %button.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse", :type => "button"}
               %span.icon-bar
               %span.icon-bar
@@ -79,8 +79,8 @@
           .container
             .carousel-captionp
               %a{ :href => quastion_path(@best_thoughts[3].quastion)}
-                %h1.quicksand= @best_thoughts[3].quastion.discription
-              %h1.tangerine= @best_thoughts[3].point
+                %h1.quicksand= @best_thoughts[0].quastion.discription
+              %h1.tangerine= @best_thoughts[0].point
               %a.btn.btn-large.btn-primary.quicksand1{:href => best_thoughts_path} Best thoughts
         .item
           = image_tag('images2.jpeg')
