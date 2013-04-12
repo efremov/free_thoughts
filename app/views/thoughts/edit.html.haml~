@@ -1,0 +1,7 @@
+%h1 Editing thought
+
+= render 'form'
+
+= link_to 'Show', @thought
+\|
+= link_to 'Back', thoughts_path

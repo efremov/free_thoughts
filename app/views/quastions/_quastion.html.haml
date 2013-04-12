@@ -1,0 +1,13 @@
+%tr
+  %td.first
+    %h3.tangerine= quastion.discription
+  %td.second
+    %h4.sansation= quastion.rate - 110
+  %td.third
+    .btn-group.pull-right
+    - if current_user
+      - if quastion.can_agree(current_user) or current_user == User.find(1)
+        .btn.btn-small
+          .quicksand1= link_to 'Agree', incriment_quastion_path(quastion), :method => :post, :remote => true
+          - if current_user == User.find(1)
+            .quicksand= link_to 'Delete', quastion_path(quastion), :method => :delete

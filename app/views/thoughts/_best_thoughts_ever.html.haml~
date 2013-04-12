@@ -1,0 +1,11 @@
+- best_thoughts_ever.each do |best_thought| 
+  .featurette.best_quastions.box-shadow
+    - if best_thought.quastion
+      %h2.quicksand= link_to best_thought.quastion.discription, quastion_path(best_thought.quastion)
+    %blockquote
+      %h2.featurette-heading.tangerine= best_thought.point
+      - if best_thought.user
+        - if best_thought.user.visible
+          - if best_thought.user.personal_info 
+            %h4.quicksand= link_to best_thought.user.personal_info.name , user_personal_infos_path(best_thought.user)
+  %hr.featurette-divider   

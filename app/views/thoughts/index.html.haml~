@@ -1,0 +1,26 @@
+%h1 Listing thoughts
+
+%table
+  %tr
+    %th User
+    %th Quastion
+    %th Rate
+    %th Point
+    %th
+    %th
+    %th
+    %th
+
+  - @thoughts.each do |thought|
+    %tr
+      %td= thought.user_id
+      %td= thought.quastion_id
+      %td= thought.rate
+      %td= thought.point
+      %td= link_to 'Show', quastion_thought_path(thought.quastion_id, thought)
+      %td= link_to 'Edit', edit_quastion_thought_path(thought)
+      %td= link_to 'Destroy', thought, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to 'Agree', incriment_quastion_thought_path(thought.quastion_id, thought.id), :method => :post
+%br
+
+= link_to 'New Thought', new_quastion_thought_path(@current_quastion)

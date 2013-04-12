@@ -1,0 +1,116 @@
+!!! 5
+%html(lang="en")
+  %head
+    %meta(charset="utf-8")
+    %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    %title= content_for?(:title) ? yield(:title) : "FreeThought"
+    = csrf_meta_tags
+    / Le HTML5 shim, for IE6-8 support of HTML elements
+    /[if lt IE 9]
+      = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    = stylesheet_link_tag "application", :media => "all"
+    %link(href="images/apple-touch-icon-144x144.png" rel="apple-touch-icon-precomposed" sizes="144x144")
+    %link(href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon-precomposed" sizes="114x114")
+    %link(href="images/apple-touch-icon-72x72.png" rel="apple-touch-icon-precomposed" sizes="72x72")
+    %link(href="images/apple-touch-icon.png" rel="apple-touch-icon-precomposed")
+    %link(href="favicon.ico" rel="shortcut icon")
+
+
+  %body
+    .container-fluid
+      .masthead
+        %header
+          %h3.muted.shadow2
+            Free thoughts       
+            - if user_signed_in?     
+              .btn-group 
+                .btn.btn-primary
+                  .quicksand1= link_to "Sign out", destroy_user_session_path, :method => :delete
+            - else
+              = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :class => "form-inline"}) do |f|
+                = f.email_field :email, :autofocus => true, :placeholder => "Email"
+                = f.password_field :password, :placeholder => "Password"
+                - if devise_mapping.rememberable?
+                  = f.check_box :remember_me
+                  = f.label :remember
+                  .btn-group 
+                    %button.btn.btn-primary.quicksand{ :type => "submit" } Sign in
+                    %a.btn.btn-primary.quicksand{:href => new_user_registration_path} Sign up
+    .container-fluid
+      .navbar
+        .navbar-inner       
+          %ul.nav.box-shadow
+            %li.quicksand1= link_to "Main page", quastions_path
+            - if user_signed_in?
+              %li.quicksand1= link_to "Your personal information", user_personal_infos_path(current_user)
+            -else
+              %li.quicksand1= link_to "About us", "/best_quastions_path"  
+            %li.quicksand1= link_to "Best quastions", best_quastions_path
+            %li.quicksand1= link_to "Best thoughts", best_thoughts_path
+
+    #myCarousel.carousel.slide
+      .carousel-inner
+        .item.active
+          = image_tag('niagara2.jpg')
+          .container            
+            .carousel-captionp
+              %a{ :href => quastion_path(@best_thoughts[1].quastion)}
+                %h1.quicksand= @best_thoughts[1].quastion.discription
+              %h1.tangerine= @best_thoughts[1].point
+              %a.btn.btn-large.btn-primary.quicksand1{:href => new_user_registration_path} Sign up today
+        .item
+          = image_tag('nature01312.jpg')
+          .container
+            .carousel-captionp
+              %a{ :href => quastion_path(@best_thoughts[2].quastion)}
+                %h1.quicksand= @best_thoughts[2].quastion.discription
+              %h1.tangerine= @best_thoughts[2].point
+              %a.btn.btn-large.btn-primary.quicksand1{:href => "#"} Learn more
+        .item
+          = image_tag('misty_mountains_135623.jpg')
+          .container
+            .carousel-captionp
+              %a{ :href => quastion_path(@best_thoughts[3].quastion)}
+                %h1.quicksand= @best_thoughts[3].quastion.discription
+              %h1.tangerine= @best_thoughts[3].point
+              %a.btn.btn-large.btn-primary.quicksand1{:href => "#"} Learn more
+        .item
+          = image_tag('images2.jpeg')
+          .container
+            .carousel-captionp
+              %a{ :href => quastion_path(@best_thoughts[1].quastion)}
+                %h1.quicksand= @best_thoughts[1].quastion.discription
+              %h1.tangerine= @best_thoughts[1].point
+              %a.btn.btn-large.btn-primary.quicksand1{:href => "#"} Browse gallery
+      %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"} ‹
+      %a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel"} ›
+
+    .container-fluid
+      .row-fluid
+        .span12
+          - if current_user
+            - if current_user == User.find(1)
+              = form_for @great_thought, :url => great_thought_path, :html => { :class => "form-inline", :method => :post} do |f|
+                = f.text_field :quotation, :placeholder => "Quotation"
+                = f.text_field :author, :placeholder => "Author"
+                %button.btn.btn-primary{ :type => "submit" } Save
+          %blockquote.pull-right
+            %h2.tangerine.shadow= @today_great_thought.quotation
+            %small.tangerine-sm= @today_great_thought.author
+      = yield
+      
+        
+      %footer
+        .shadow
+          %p.pull-right
+            =link_to "Back to top", "#"
+          %p &copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
+      
+      
+     
+    /
+      Javascripts
+      \==================================================
+    / Placed at the end of the document so the pages load faster
+    = javascript_include_tag "application"

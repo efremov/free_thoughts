@@ -1,0 +1,4 @@
+class AddColumnToGreatThoughts < ActiveRecord::Migration
+  def change
+  end
+end

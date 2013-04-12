@@ -1,0 +1,4 @@
+class Folower < ActiveRecord::Base
+  attr_accessible :integer, :integer
+  belongs_to :user, foreign_key: :user_id 
+end

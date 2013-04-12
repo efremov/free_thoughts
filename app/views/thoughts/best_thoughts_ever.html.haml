@@ -1,0 +1,6 @@
+.row-fluid
+  .span10.offset1
+    %h1.shadow1.quicksand The most talanted thoughts   
+    .best_thoughts1
+      = render partial: 'best_thoughts_ever', :locals => { :best_thoughts_ever => @best_thoughts_ever }  
+    .quicksand= link_to 'Loading more thoughts', best_thoughts_path(:page => @best_thoughts_ever.next_page), :remote => true, :class => 'load-more-thoughts' if @best_thoughts_ever.next_page

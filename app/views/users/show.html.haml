@@ -1,0 +1,25 @@
+%p#notice= notice
+
+%p
+  %b Email:
+  = current_user.email 
+%p
+  %b Your rating:
+  = current_user.rate
+= form_for @user do |f|
+  - if @user.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+      %ul
+        - @user.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    %b= 'Show personal information to others?'
+    = f.check_box :visible
+  .actions
+    = f.submit 'Save'
+
+= link_to 'Personal information', user_personal_infos_path(current_user)
+
+= link_to 'Sign out', destroy_user_session_path , :method => :delete
