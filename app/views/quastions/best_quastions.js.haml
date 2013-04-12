@@ -1,4 +1,0 @@
-$('.best_quastions1').append('#{escape_javascript(render partial: 'best_quastions', :locals => { :best_quastions => @best_quastions })}');
-$('a.load-more-quastions').attr('href', '#{best_quastions_path(:page => @best_quastions.next_page)}');
-- unless @best_quastions.next_page
-  $('a.load-more-quastions').remove();

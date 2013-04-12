@@ -1,5 +1,0 @@
-class AddDefaultValueToQuastions < ActiveRecord::Migration
-  def change
-    change_column :quastions, :image, :default => 'no'
-  end
-end

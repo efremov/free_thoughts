@@ -1,4 +1,0 @@
-class AddDefaultValueToPassAttribute < ActiveRecord::Migration
-  def change
-  end
-end

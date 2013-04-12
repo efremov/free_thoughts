@@ -1,4 +1,0 @@
-class AddPrivacyToUsers < ActiveRecord::Migration
-  def change
-  end
-end

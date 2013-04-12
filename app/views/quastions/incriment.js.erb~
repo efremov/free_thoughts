@@ -1,1 +1,0 @@
-$('#gg').html("<%= escape_javascript(render @potential_quastions ) %>")
