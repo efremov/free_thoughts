@@ -1,10 +1,9 @@
 class ApplicationController < ActionController::Base
-  require 'sprockets/railtie'
   protect_from_forgery
   before_filter :best_thoughts
   before_filter :great_thought
   before_filter :admin
- 
+  
   
   def admin
     unless current_user == User.find(1) or params[:controller] == 'devise/sessions' or params[:controller] == 'devise/registrations'               

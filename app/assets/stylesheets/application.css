@@ -27,9 +27,9 @@
       format('truetype');
     }
     @font-face {
-    font-family: "Sansation_Regular";
+    font-family: "Sansation_Regular"
     src: url('Sansation_Regular.ttf')
-    format('truetype');
+    format('truetype')
     }
 
    body {
@@ -234,7 +234,8 @@
   .red-blue-invert {
     background-image: -webkit-gradient(linear, 3% 18%, 6% 100%, from(#dcf2fa), to(#dcf2fa),color-stop(.6,#ffcfc9));
     background-image: -moz-linear-gradient(6% 40% 286deg, #9aa7fc, #c3e4fa, #e1f9fa 80%);     
-  }    
+  }
+  
   
   
   .tangerine {
