@@ -1,0 +1,24 @@
+= form_for @quastion do |f|
+  - if @quastion.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@quastion.errors.count, "error")} prohibited this quastion from being saved:"
+      %ul
+        - @quastion.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :image
+    = image_tag(@quastion.image.url) if @quastion.image?
+    = f.file_field :image
+    = f.hidden_field :image_cache
+  .field
+    = f.label :discription
+    = f.text_field :discription
+  .field
+    = f.label :topic
+    = f.text_field :topic
+  .field
+    = f.label :pass
+    = f.check_box :pass
+  .actions
+    = f.submit 'Save'

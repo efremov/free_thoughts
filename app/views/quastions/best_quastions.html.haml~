@@ -1,0 +1,7 @@
+.row-fluid
+  .span10.offset1
+    %h1.shadow1.quicksand The most popular quastions
+    .best_quastions1
+      = render partial: 'best_quastions', :locals => { :best_quastions => @best_quastions }  
+    .quicksand= link_to 'Load more quastions', best_quastions_path(:page => @best_quastions.next_page), :remote => true, :class => 'load-more-quastions'if @best_quastions.next_page
+

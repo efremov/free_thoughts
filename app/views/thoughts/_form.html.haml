@@ -1,0 +1,13 @@
+= form_for @thought, url: quastion_thoughts_path(@quastion) do |f|
+  - if @thought.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@thought.errors.count, "error")} prohibited this thought from being saved:"
+      %ul
+        - @thought.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :point
+    = f.text_field :point
+  .actions
+    = f.submit 'Save'

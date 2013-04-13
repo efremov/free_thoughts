@@ -1,0 +1,43 @@
+%p#notice= notice
+.row-fluid
+  .span10.offset1
+    .featurette
+      .featurette-image.img-polaroid.pull-right
+        = image_tag(@quastion.image)
+      %h2.featurette-heading
+        .shadow1 Tell what you <span class="muted">feel</span> about that!
+      %h2.quicksand= @quastion.discription
+      %hr.featurette-divider 
+    .tabbable.box-shadow
+      %ul.nav.nav-tabs
+        %li.active
+          %a.quicksand{"data-toggle" => "tab", :href => "#tab1"} All thoughts
+        %li
+          %a.quicksand{"data-toggle" => "tab", :href => "#tab2"} New thoughts
+        %li
+          %a.quicksand{"data-toggle" => "tab", :href => "#tab3"} Top thoughts
+      .tab-content
+        #tab1.tab-pane.active
+          %table.table.table-striped#thoughts
+            = render @thoughts
+        #tab2.tab-pane
+          %table.table.table-striped#thoughts_new
+            = render @thoughts_newest
+        #tab3.tab-pane
+          %table.table.table-striped#thoughts_top
+            = render @thoughts_top20
+    
+
+    = form_for @thought, url: quastion_thoughts_path(@quastion), :remote => false do |f|
+      - if @thought.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(@thought.errors.count, "error")} prohibited this thought from being saved:"
+          %ul
+            - @thought.errors.full_messages.each do |msg|
+              %li= msg
+
+      .field
+        = f.text_area(:point,  :size => "5x2", :placeholder => "We appreciate your opinion") 
+      .actions
+        = f.submit 'Save'
+    

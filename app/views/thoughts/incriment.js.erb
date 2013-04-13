@@ -1,0 +1,3 @@
+$('#thoughts').html("<%= escape_javascript(render @thoughts ) %>")
+$('#thoughts_new').html("<%= escape_javascript(render @thoughts_newest ) %>")
+$('#thoughts_top').html("<%= escape_javascript(render @thoughts_top20 ) %>")

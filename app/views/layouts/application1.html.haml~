@@ -1,0 +1,72 @@
+!!! 5
+%html(lang="en")
+  %head
+    %meta(charset="utf-8")
+    %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    %title= content_for?(:title) ? yield(:title) : "FreeThought"
+    = csrf_meta_tags
+    / Le HTML5 shim, for IE6-8 support of HTML elements
+    /[if lt IE 9]
+      = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    = stylesheet_link_tag "application", :media => "all"
+    %link(href="images/apple-touch-icon-144x144.png" rel="apple-touch-icon-precomposed" sizes="144x144")
+    %link(href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon-precomposed" sizes="114x114")
+    %link(href="images/apple-touch-icon-72x72.png" rel="apple-touch-icon-precomposed" sizes="72x72")
+    %link(href="images/apple-touch-icon.png" rel="apple-touch-icon-precomposed")
+    %link(href="favicon.ico" rel="shortcut icon")
+
+
+  %body
+  
+    .masthead
+      %h3.muted Project name
+    .navbar
+        .navbar-inner
+	  .container
+	    %ul.nav
+	      %li.active= link_to "Link 1", "/path1"
+	      %li= link_to "Link 1", "/path1"
+	      %li= link_to "Link 1", "/path1"
+	      %li= link_to "Link 1", "/path1"s
+	      %li= link_to "Link 1", "/path1"
+	      %li= link_to "Link 1", "/path1"
+    
+
+    #myCarousel.carousel.slide
+      .carousel-inner
+	.item.active
+	  = image_tag('images.jpeg')
+	  .container
+	    .carousel-caption
+	      %h1 Example headline.
+	      %p.lead Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+	      %a.btn.btn-large.btn-primary{:href => "#"} Sign up today
+	.item
+	   = image_tag('images1.jpeg')
+	  .container
+	    .carousel-caption
+	      %h1 Another example headline.
+	      %p.lead Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+	      %a.btn.btn-large.btn-primary{:href => "#"} Learn more
+	.item
+	  = image_tag('images2.jpeg')
+	  .container
+	    .carousel-caption
+	      %h1 One more for good measure.
+	      %p.lead Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+	      %a.btn.btn-large.btn-primary{:href => "#"} Browse gallery
+      %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"} ‹
+      %a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel"} ›
+    
+    .container
+      =bootstrap_flash
+      =yield
+      
+      %footer
+        %p &copy; Company 2013
+    /
+      Javascripts
+      \==================================================
+    / Placed at the end of the document so the pages load faster
+    = javascript_include_tag "application"

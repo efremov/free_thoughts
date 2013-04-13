@@ -1,0 +1,3 @@
+class AgreeQuastion < ActiveRecord::Base
+   attr_accessible :quastion_id, :user_id
+end
