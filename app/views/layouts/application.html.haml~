@@ -78,9 +78,9 @@
           = image_tag('misty_mountains_135623.jpg')
           .container
             .carousel-captionp
-              %a{ :href => quastion_path(@best_thoughts[3].quastion)}
-                %h1.quicksand= @best_thoughts[3].quastion.discription
-              %h1.tangerine= @best_thoughts[3].point
+              %a{ :href => quastion_path(@best_thoughts[0].quastion)}
+                %h1.quicksand= @best_thoughts[0].quastion.discription
+              %h1.tangerine= @best_thoughts[0].point
               %a.btn.btn-large.btn-primary.quicksand1{:href => best_thoughts_path} Best thoughts
         .item
           = image_tag('images2.jpeg')
