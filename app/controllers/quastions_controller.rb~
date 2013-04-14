@@ -2,7 +2,7 @@ class QuastionsController < ApplicationController
   # GET /quastions
   # GET /quastions.json
   
-  skip_before_filter :admin , :except => { :edit, :new} 
+  skip_before_filter :admin , :except => [ :edit, :new ]
  
   
   def best_quastions

@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :best_thoughts
   before_filter :great_thought
-  #before_filter :admin
+  before_filter :admin
   
   
   def admin

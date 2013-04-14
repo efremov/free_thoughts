@@ -21,7 +21,7 @@ class ImageUploader < CarrierWave::Uploader::Base
    process :make_thumb
     
    def make_thumb2
-     resize_to_fit(700,800)
+     resize_to_fit(800,800)
    end
    
    version :thumb2 do

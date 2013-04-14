@@ -9,6 +9,7 @@
 #
  every 1.day, :at => '12pm' do
    runner "Quastion.midnight", :environment => 'development'
+   runner "GreatThought.midnight ", :environment => 'development'  
  end
 #
 # every 4.days do

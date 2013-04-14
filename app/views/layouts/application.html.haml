@@ -27,20 +27,21 @@
               %span.icon-bar
               %span.icon-bar
             %a.brand{:href => quastions_path}
-              .shadow2 Free thoughts 
+              Free thoughts 
             - if current_user
               - if current_user.personal_info
-                .quicksand1.navbar-text.pull-right Logged in as #{link_to current_user.personal_info.name, user_personal_infos_path(current_user)}  
+                .welkome
+                  .quicksand1.navbar-text.pull-right Logged in as #{link_to current_user.personal_info.name, user_personal_infos_path(current_user)}  
             .nav-collapse.collapse
               %ul.nav
                 - if user_signed_in?
-                  %li.quicksand1= link_to "Your personal information", user_personal_infos_path(current_user)  
-                %li.quicksand1= link_to "Best quastions", best_quastions_path
-                %li.quicksand1= link_to "Best thoughts", best_thoughts_path
+                  %li= link_to "Your personal information", user_personal_infos_path(current_user)  
+                %li= link_to "Best quastions", best_quastions_path
+                %li= link_to "Best thoughts", best_thoughts_path
                 - if user_signed_in?  
-                  %li.quicksand1= link_to "Sign out", destroy_user_session_path, :method => :delete
+                  %li= link_to "Sign out", destroy_user_session_path, :method => :delete
                 - else
-                  %li.quicksand1= link_to "Sign up", new_user_registration_path
+                  %li= link_to "Sign up", new_user_registration_path
                   %li.dropdown
                     %a.dropdown-toggle{ :href=> "#", "data-toggle" => "dropdown"} Sign in
                     %ul.dropdown-menu
@@ -52,7 +53,7 @@
                             .field
                               = f.check_box :remember_me
                               = f.label :remember
-                            = f.submit 'Save'
+                            = f.submit 'Log in'
     
     
     
@@ -114,7 +115,7 @@
       
         
       %footer
-        .shadow
+        .shadow    
           %p.pull-right
             =link_to "Back to top", "#"
           %p &copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a>

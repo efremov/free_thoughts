@@ -3,41 +3,42 @@
     -if @user.visible
       %ul.thumbnails
         %li.span12
-          .thumbnail
-            .img-polaroid
-              = image_tag(@personal_info.image.thumb)
-          .pers    
-            %dl.dl-horizontal
-              - unless @personal_info.name == ""
-                %dt.shadow-str.quicksand Name:
-                %dd.quicksand= @personal_info.name
-              - unless @personal_info.surname == ""
-                %dt.shadow-str.quicksand Surname:
-                %dd.quicksand= @personal_info.surname
-              - unless @personal_info.gender == ""
-                %dt.shadow-str.quicksand Sex:
-                %dd.quicksand= @personal_info.gender
-              - unless @personal_info.age == nil
-                %dt.shadow-str.quicksand Age:
-                %dd.quicksand= @personal_info.age
-              - unless @personal_info.country == ""
-                %dt.shadow-str.quicksand Country:
-                %dd.quicksand= @personal_info.country
-              - unless @personal_info.marital_status == ""
-                %dt.shadow-str.quicksand Marital status:
-                %dd.quicksand= @personal_info.marital_status
-              - unless @personal_info.credo == ""
-                %dt.shadow-str.quicksand Credo:
-                %dd.quicksand= @personal_info.credo
-              - unless @personal_info.religion == ""
-                %dt.shadow-str.quicksand Religion:
-                %dd.quicksand= @personal_info.religion
-              - unless @personal_info.political_views == ""
-                %dt.shadow-str.quicksand Political views:
-                %dd.quicksand= @personal_info.political_views
-              - unless @personal_info.smf_more == ""
-                %dt.shadow-str.quicksand Whatever about you:
-                %dd.quicksand= @personal_info.smf_more
+          - if @personal_info
+            .thumbnail
+              .img-polaroid
+                = image_tag(@personal_info.image.thumb)
+            .pers    
+              %dl.dl-horizontal
+                - unless @personal_info.name == ""
+                  %dt.shadow-str.quicksand Name:
+                  %dd.quicksand= @personal_info.name
+                - unless @personal_info.surname == ""
+                  %dt.shadow-str.quicksand Surname:
+                  %dd.quicksand= @personal_info.surname
+                - unless @personal_info.gender == ""
+                  %dt.shadow-str.quicksand Sex:
+                  %dd.quicksand= @personal_info.gender
+                - unless @personal_info.age == nil
+                  %dt.shadow-str.quicksand Age:
+                  %dd.quicksand= @personal_info.age
+                - unless @personal_info.country == ""
+                  %dt.shadow-str.quicksand Country:
+                  %dd.quicksand= @personal_info.country
+                - unless @personal_info.marital_status == ""
+                  %dt.shadow-str.quicksand Marital status:
+                  %dd.quicksand= @personal_info.marital_status
+                - unless @personal_info.credo == ""
+                  %dt.shadow-str.quicksand Credo:
+                  %dd.quicksand= @personal_info.credo
+                - unless @personal_info.religion == ""
+                  %dt.shadow-str.quicksand Religion:
+                  %dd.quicksand= @personal_info.religion
+                - unless @personal_info.political_views == ""
+                  %dt.shadow-str.quicksand Political views:
+                  %dd.quicksand= @personal_info.political_views
+                - unless @personal_info.smf_more == ""
+                  %dt.shadow-str.quicksand Whatever about you:
+                  %dd.quicksand= @personal_info.smf_more
 
       - if current_user == @user 
         .shadow
@@ -81,7 +82,7 @@
                 %strong.featurette-heading.quicksand= link_to user_quastion.quastion.discription, quastion_path(user_quastion.quastion)
                 %blockquote
                   %h2.tangerine= user_quastion.point
-                  %p= user_quastion.rate
+                  %h4.sansation= user_quastion.rate
                 %hr.featurette-divider   
           = will_paginate @users_quastions
         #tab3.tab-pane

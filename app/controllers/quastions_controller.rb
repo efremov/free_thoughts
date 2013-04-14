@@ -18,7 +18,7 @@ class QuastionsController < ApplicationController
   
   def index
     
-    @potential_quastions = Quastion.potential
+    @potential_quastions = Quastion.potential.order('id desc')
     @quastion = Quastion.new
     @quastions = Quastion.where(pass: true)
     @potential_quastions_newest = Quastion.potential.last(10)

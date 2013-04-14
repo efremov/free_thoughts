@@ -34,7 +34,7 @@
 
    body {
       padding-bottom: 40px;
-      background-image: -webkit-gradient(linear, 3% 18%, 6% 100%, from(#dcf2fa), to(#dcf2fa),color-stop(.6,#ffcfc9));
+      background-image: -webkit-gradient(linear, 65% 100%, 56% 12%, from(#e1f9fa), to(#c3e4fa),color-stop(.9,#587fe8));
       background-image: -moz-linear-gradient(0% 31% 291deg, #c3e4fa, #587fe8, #e1f9fa 80%);     
   }
     .container {
@@ -75,10 +75,11 @@
     
      .navbar .navbar-inner {
         border: 0;
-        padding: 0;
 	background-image: -webkit-gradient(linear, 3% 18%, 6% 100%, from(#dcf2fa), to(#dcf2fa),color-stop(.6,#ffcfc9));
 	background-image: -moz-linear-gradient(6% 40% 286deg, #dcf2fa, #ffcfc9, #dcf2fa 75%);     
 	-moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);    
+	-box-shadow: 0 2px 10px rgba(0,0,0,.25); 
+	-webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25); 
     }
     .navbar .brand {
       padding: 14px 20px 16px;
@@ -232,7 +233,7 @@
   }
   
   .red-blue-invert {
-    background-image: -webkit-gradient(linear, 3% 18%, 6% 100%, from(#dcf2fa), to(#dcf2fa),color-stop(.6,#ffcfc9));
+    background-image: -webkit-gradient(linear, 65% 100%, 56% 12%, from(#9aa7fc), to(#e1f9fa),color-stop(.9,#c3e4fa));
     background-image: -moz-linear-gradient(6% 40% 286deg, #9aa7fc, #c3e4fa, #e1f9fa 80%);     
   }
   
@@ -255,12 +256,30 @@
   }
   
   .niagare {
-    -webkit-filter: invert(100%);
-    -moz-filter: invert(100%);
-    -ms-filter: invert(100%);
-    -o-filter: invert(100%);
-    filter: invert(100%);
+    -webkit-filter: sepia(20%);
+    -moz-filter: sepia(20%);
+    -ms-filter: sepia(20%);
+    -o-filter: sepia(20%);
+    filter: sepia(20%);
   }
+  
+  .welkome {
+    margin-right: 20px;
+  }
+  
+  .new_user #new-user {
+    background-color: inherit;
+  }
+  
+  .cl :hover {
+    color: red;
+    background-color: inherit;
+  }
+  .cl :focus {
+    color: red;
+    background-color: inherit;
+  }
+  
     
     /* RESPONSIVE CSS
     -------------------------------------------------- */
