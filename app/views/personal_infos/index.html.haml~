@@ -4,6 +4,7 @@
       %ul.thumbnails
         %li.span12
           - if @personal_info
+            - if @personal_info.image
             .thumbnail
               .img-polaroid
                 = image_tag(@personal_info.image.thumb)
@@ -46,12 +47,13 @@
       .shadow
         .quicksand= link_to 'Back', quastions_path
       - unless @user == current_user
-        - if current_user.folowers.where(thinker_id: @user.id) == []
-          .shadow
-            .quicksand= link_to 'Follow', user_personal_info_folowers_path(@user, @personal_info), method: :post
-        - else
-          .shadow
-            .quicksand= link_to 'Unfollow', user_personal_info_folower_path(@user,@personal_info,@folower), method: :delete
+        - if @pesronal_info
+          - if current_user.folowers.where(thinker_id: @user.id) == []
+            .shadow
+              .quicksand= link_to 'Follow', user_personal_info_folowers_path(@user, @personal_info), method: :post
+          - else
+            .shadow
+              .quicksand= link_to 'Unfollow', user_personal_info_folower_path(@user,@personal_info,@folower), method: :delete
   .span8
     .tabbables.tabs-right.box-shadow
       %ul.nav.nav-tabs

@@ -4,9 +4,10 @@
       %ul.thumbnails
         %li.span12
           - if @personal_info
-            .thumbnail
-              .img-polaroid
-                = image_tag(@personal_info.image.thumb)
+            - if @personal_info.image
+              .thumbnail
+                .img-polaroid
+                  = image_tag(@personal_info.image.thumb)
             .pers    
               %dl.dl-horizontal
                 - unless @personal_info.name == ""
