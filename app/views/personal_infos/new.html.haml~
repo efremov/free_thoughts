@@ -1,4 +1,4 @@
-%.row-fluid
+.row-fluid
   .span4.offset4.box-shadow
       h1.shadow1.quicksand Please, input your personal information
 
