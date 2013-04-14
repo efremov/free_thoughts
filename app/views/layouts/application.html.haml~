@@ -26,12 +26,11 @@
               %span.icon-bar
               %span.icon-bar
               %span.icon-bar
-            %a.brand{:href => quastions_path}
+            %a.brand{:href => quastions_path, :style => "background-color: transparent;"}
               Free thoughts 
             - if current_user
-              - if current_user.personal_info
-                .welkome
-                  .quicksand1.navbar-text.pull-right Logged in as #{link_to current_user.personal_info.name, user_personal_infos_path(current_user)}  
+              - if current_user.personal_info             
+                .quicksand1.navbar-text.pull-right{:style => "margin-right: 10px;"} Logged in as #{link_to current_user.personal_info.name, user_personal_infos_path(current_user)}  
             .nav-collapse.collapse
               %ul.nav
                 - if user_signed_in?
@@ -53,9 +52,7 @@
                             .field
                               = f.check_box :remember_me
                               = f.label :remember
-                            = f.submit 'Log in'
-    
-    
+                            = f.submit 'Log in'        
     
     #myCarousel.carousel.slide
       .carousel-inner
@@ -112,14 +109,13 @@
               %h2.tangerine.shadow= @today_great_thought.quotation
               %small.tangerine-sm= @today_great_thought.author
       = yield
-      
-        
+              
       %footer
         .shadow    
-          %a.pull-right{ :href => "#"}
-            %h1.quicksand Back to top
-          %p &copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
-      
+          %p.pull-right
+            %a{:href =>"#", :style => "background-color: inherit;"} Back to top
+          %p &copy; 2013 Company, Inc. &middot; <a href="#" style="background-color: inherit;">Privacy</a> &middot; <a href="#">Terms</a>
+          
       
      
     /

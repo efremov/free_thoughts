@@ -2,9 +2,10 @@
   .span7
     = bootstrap_flash
     - @quastions.each do |quastion|
-      .hero-unit.box-shadow.niagare{ :style => " background-image: url(#{quastion.image.thumb}); "}
+      .hero-unit.box-shadow.niagare{ :style => " background-image: url(#{quastion.image.thumb2}); "}
         %h1.tangerine= quastion.discription
-        %h3.tangerine= quastion.topic
+        .scale
+          %h3.tangerine= quastion.topic
         %a.btn.btn-large.btn-primary.quicksand1{:href => quastion_path(quastion)} Answer the quastion
       %hr.featurette-divider
   .span5

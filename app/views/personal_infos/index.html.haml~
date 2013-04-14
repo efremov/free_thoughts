@@ -5,9 +5,9 @@
         %li.span12
           - if @personal_info
             - if @personal_info.image
-            .thumbnail
-              .img-polaroid
-                = image_tag(@personal_info.image.thumb)
+              .thumbnail
+                .img-polaroid
+                  = image_tag(@personal_info.image.thumb)
             .pers    
               %dl.dl-horizontal
                 - unless @personal_info.name == ""

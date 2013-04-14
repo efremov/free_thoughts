@@ -87,6 +87,10 @@
       font-weight: bold;
       text-shadow: 0 -1px 0 rgba(0,0,0,.5);
     }
+    .navbar .brand :hover {
+      background-color: red;
+    }
+    
     
       
       .navbar .nav > li > a {
@@ -223,8 +227,7 @@
     
   }
   .quicksand1 {
-    font-family: 'Quicksand_Book_Oblique', Arial, sans-serif;
-   
+    font-family: 'Quicksand_Book_Oblique', Arial, sans-serif; 
   }
   
   .red-blue {
@@ -271,14 +274,7 @@
     background-color: inherit;
   }
   
-  a:hover {
-    color: red;
-    background-color: inherit;
-  }
-  a:focus {
-    color: red;
-    background-color: inherit;
-  }
+  
   
     
     /* RESPONSIVE CSS

@@ -13,7 +13,13 @@ class ImageUploader < CarrierWave::Uploader::Base
         image   
       end
    end
-
+   
+   
+  def default_url
+      "/uploads/personal_info/image/16/thumb_993544.jpg"
+  end
+  
+   
    def make_thumb
       resize_to_fit(1000,1000)
    end
