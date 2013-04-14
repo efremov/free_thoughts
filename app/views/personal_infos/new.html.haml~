@@ -1,7 +1,6 @@
 .row-fluid
   .span4.offset4.box-shadow
-      h1.shadow1.quicksand Please, input your personal information
-
+    h1.shadow1.quicksand Please, input your personal information
     = form_for @personal_info, :url =>  user_personal_infos_path(current_user), :html => {:multipart => true, :method => :post}  do |f|
       - if @personal_info.errors.any?
         #error_explanation
