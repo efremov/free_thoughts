@@ -7,7 +7,7 @@
 #
 # set :output, "/path/to/my/cron_log.log"
 #
- every 1.day, :at => '12pm' do
+ every 1.day, :at => '12am' do
    runner "Quastion.midnight", :environment => 'development'
    runner "GreatThought.midnight ", :environment => 'development'  
  end
