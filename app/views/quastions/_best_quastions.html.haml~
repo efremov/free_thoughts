@@ -7,5 +7,5 @@
         - if best_thought.user
           - if best_thought.user.visible
             - if best_thought.user.personal_info
-              %h4.quicksand= - link_to best_thought.user.personal_info.name, user_personal_infos_path(best_thought.user)
+              %h4.quicksand= link_to best_thought.user.personal_info.name, user_personal_infos_path(best_thought.user)
   %hr.featurette-divider   

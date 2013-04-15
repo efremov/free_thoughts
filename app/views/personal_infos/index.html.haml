@@ -11,49 +11,49 @@
             .pers    
               %dl.dl-horizontal
                 - unless @personal_info.name == ""
-                  %dt.shadow-str.quicksand Name:
-                  %dd.quicksand= @personal_info.name
+                  %dt.shadow-str.sansation Name:
+                  %dd.sansation= @personal_info.name
                 - unless @personal_info.surname == ""
-                  %dt.shadow-str.quicksand Surname:
-                  %dd.quicksand= @personal_info.surname
+                  %dt.shadow-str.sansation Surname:
+                  %dd.sansation= @personal_info.surname
                 - unless @personal_info.gender == ""
-                  %dt.shadow-str.quicksand Sex:
-                  %dd.quicksand= @personal_info.gender
+                  %dt.shadow-str.sansation Sex:
+                  %dd.sansation= @personal_info.gender
                 - unless @personal_info.age == nil
-                  %dt.shadow-str.quicksand Age:
-                  %dd.quicksand= @personal_info.age
+                  %dt.shadow-str.sansation Age:
+                  %dd.sansation= @personal_info.age
                 - unless @personal_info.country == ""
-                  %dt.shadow-str.quicksand Country:
-                  %dd.quicksand= @personal_info.country
+                  %dt.shadow-str.sansation Country:
+                  %dd.sansation= @personal_info.country
                 - unless @personal_info.marital_status == ""
-                  %dt.shadow-str.quicksand Marital status:
-                  %dd.quicksand= @personal_info.marital_status
+                  %dt.shadow-str.sansation Marital status:
+                  %dd.sansation= @personal_info.marital_status
                 - unless @personal_info.credo == ""
-                  %dt.shadow-str.quicksand Credo:
-                  %dd.quicksand= @personal_info.credo
+                  %dt.shadow-str.sansation Credo:
+                  %dd.sansation= @personal_info.credo
                 - unless @personal_info.religion == ""
-                  %dt.shadow-str.quicksand Religion:
-                  %dd.quicksand= @personal_info.religion
+                  %dt.shadow-str.sansation Religion:
+                  %dd.sansation= @personal_info.religion
                 - unless @personal_info.political_views == ""
-                  %dt.shadow-str.quicksand Political views:
-                  %dd.quicksand= @personal_info.political_views
+                  %dt.shadow-str.sansation Political views:
+                  %dd.sansation= @personal_info.political_views
                 - unless @personal_info.smf_more == ""
-                  %dt.shadow-str.quicksand Whatever about you:
-                  %dd.quicksand= @personal_info.smf_more
+                  %dt.shadow-str.sansation Whatever about you:
+                  %dd.sansation= @personal_info.smf_more
 
       - if current_user == @user 
         .shadow
-          .quicksand= link_to 'Edit', edit_user_personal_info_path(current_user, @personal_info)
+          .sansation= link_to 'Edit', edit_user_personal_info_path(current_user, @personal_info)
       .shadow
-        .quicksand= link_to 'Back', quastions_path
+        .sansation= link_to 'Back', quastions_path
       - unless @user == current_user
         - if @pesronal_info
           - if current_user.folowers.where(thinker_id: @user.id) == []
             .shadow
-              .quicksand= link_to 'Follow', user_personal_info_folowers_path(@user, @personal_info), method: :post
+              .sansation= link_to 'Follow', user_personal_info_folowers_path(@user, @personal_info), method: :post
           - else
             .shadow
-              .quicksand= link_to 'Unfollow', user_personal_info_folower_path(@user,@personal_info,@folower), method: :delete
+              .sansation= link_to 'Unfollow', user_personal_info_folower_path(@user,@personal_info,@folower), method: :delete
   .span8
     .tabbables.tabs-right.box-shadow
       %ul.nav.nav-tabs
@@ -71,7 +71,7 @@
           - @users_thought.each do |user_thought| 
             .featurette.best_quastions
               - if user_thought.quastion
-                %h2.quicksand= link_to user_thought.quastion.discription,quastion_path(user_thought.quastion)
+                %h2.sansation= link_to user_thought.quastion.discription,quastion_path(user_thought.quastion)
               %blockquote
                 %strong.featurette-heading.tangerine= user_thought.point
                 %h4.sansation= user_thought.rate
@@ -81,7 +81,7 @@
           - @users_quastions.each do |user_quastion|           
             .featurette.best_quastions
               - if user_quastion.quastion
-                %strong.featurette-heading.quicksand= link_to user_quastion.quastion.discription, quastion_path(user_quastion.quastion)
+                %strong.featurette-heading.sansation= link_to user_quastion.quastion.discription, quastion_path(user_quastion.quastion)
                 %blockquote
                   %h2.tangerine= user_quastion.point
                   %h4.sansation= user_quastion.rate

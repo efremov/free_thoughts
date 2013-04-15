@@ -28,7 +28,7 @@
             = render @thoughts_top20
     
 
-    = form_for @thought, url: quastion_thoughts_path(@quastion), :remote => false do |f|
+    = form_for @thought, url: quastion_thoughts_path(@quastion), :remote => true do |f|
       - if @thought.errors.any?
         #error_explanation
           %h2= "#{pluralize(@thought.errors.count, "error")} prohibited this thought from being saved:"

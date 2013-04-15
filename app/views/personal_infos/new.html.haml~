@@ -9,10 +9,10 @@
             - @personal_info.errors.full_messages.each do |msg|
               %li= msg
 
-       = f.text_field :name, :placeholder => "Name"
-       = f.text_field :surname, :placeholder => "Surname"
-       = f.text_field :gender, :placeholder => "Sex"
-       = f.number_field :age, :placeholder => "Age"
+      = f.text_field :name, :placeholder => "Name"
+      = f.text_field :surname, :placeholder => "Surname"
+      = f.text_field :gender, :placeholder => "Sex"
+      = f.number_field :age, :placeholder => "Age"
       .field
         = image_tag(@personal_info.image.thumb.url) if @personal_info.image?
         = f.file_field :image, :placeholder => "Photo"

@@ -3,4 +3,4 @@
 = render 'form'
 
 
-.shadow.quicksand== link_to 'Back', user_personal_infos_path(current_user)
+.shadow.quicksand= link_to 'Back', user_personal_infos_path(current_user)

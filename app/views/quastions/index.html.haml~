@@ -2,15 +2,17 @@
   .span7
     = bootstrap_flash
     - @quastions.each do |quastion|
-      .hero-unit.box-shadow.niagare{ :style => " background-image: url(#{quastion.image.thumb2}); "}
-        %h1.tangerine= quastion.discription
-        .scale
+      .hero-unit.box-shadow.niagare
+        .imag
+          = image_tag(quastion.image.thumb2)
+        .quastion-box
+          %h1.tangerine= quastion.discription
           %h3.tangerine= quastion.topic
-        %a.btn.btn-large.btn-primary.quicksand1{:href => quastion_path(quastion)} Answer the quastion
+          %a.btn.btn-large.btn-primary.quicksand1{:href => quastion_path(quastion)} Answer the quastion
       %hr.featurette-divider
   .span5
     .well.sidebar-nav.box-shadow.red-blue-invert
-      %h3.quicksand Your quastions      
+      %h3.sansation Your quastions      
       - if user_signed_in?
         .red-blue1
           = form_for @quastion, :remote => true  do |f|
@@ -22,19 +24,19 @@
                   %li= msg
             %container
               %field
-                %legend.shadow.quicksand1 Ask your quastion
+                %legend.shadow.sansation Ask your quastion
                 = f.text_field :discription, :placeholder => "Your quastion"
                 %h3.help-block.tangerine Feel free to ask your quastion
                 = f.text_field :topic, :placeholder => "Topic", :size => 100
-                %button.btn.btn-primary.quicksand{ :type => "submit" }Submit
+                %button.btn.btn-primary.sansation{ :type => "submit" }Submit
       .tabbable
         %ul.nav.nav-tabs
           %li.active
-            %a.quicksand1{"data-toggle" => "tab", :href => "#tab1"} Quastions
+            %a.sansation-sm{"data-toggle" => "tab", :href => "#tab1"} Quastions
           %li
-            %a.quicksand1{"data-toggle" => "tab", :href => "#tab2"} New quastions
+            %a.sansation-sm{"data-toggle" => "tab", :href => "#tab2"} New quastions
           %li
-            %a.quicksand1{"data-toggle" => "tab", :href => "#tab3"} Top quastions
+            %a.sansation-sm{"data-toggle" => "tab", :href => "#tab3"} Top quastions
         .tab-content
           #tab1.tab-pane.active
             %table.table.table-striped#quast

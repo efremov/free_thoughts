@@ -253,7 +253,15 @@
   
   .sansation {
     font-family: "Sansation_Regular" , Arial, sans-serif;
+     margin-left: 10px;
+    font-size: 30px;
   }
+  .sansation-sm {
+    font-family: "Sansation_Regular" , Arial, sans-serif;
+     margin-left: 10px;
+    font-size: 25px;
+  }
+  
   
   .niagare {
     -webkit-filter: sepia(20%);

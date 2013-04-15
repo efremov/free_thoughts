@@ -7,39 +7,39 @@
           %li= msg
 
   .field
-    .quicksand= f.label :name
+    .sansation= f.label :name
     = f.text_field :name
   .field
-    .quicksand= f.label :surname
+    .sansation= f.label :surname
     = f.text_field :surname
   .field
-    .quicksand= f.label :gender
+    .sansation= f.label :gender
     = f.text_field :gender
   .field
-    .quicksand= f.label :age
+    .sansation= f.label :age
     = f.number_field :age
   .field
-    .quicksand= f.label :image
+    .sansation= f.label :image
     = image_tag(@personal_info.image.thumb.url) if @personal_info.image?
     = f.file_field :image
     = f.hidden_field :image_cache
   .field
-    .quicksand= f.label :country
+    .sansation= f.label :country
     = f.text_field :country
   .field
-    .quicksand= f.label :marital_status
+    .sansation= f.label :marital_status
     = f.text_field :marital_status
   .field
-    .quicksand= f.label :credo
+    .sansation= f.label :credo
     = f.text_field :credo
   .field
-    .quicksand= f.label :religion
+    .sansation= f.label :religion
     = f.text_field :religion
   .field
-    .quicksand= f.label :political_views
+    .sansation= f.label :political_views
     = f.text_field :political_views
   .field
-    .quicksand= f.label :smf_more
+    .sansation= f.label :smf_more
     = f.text_field :smf_more
   .actions
-    .quicksand= f.submit 'Save'
+    .sansation= f.submit 'Save'

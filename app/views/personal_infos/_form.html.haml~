@@ -7,39 +7,39 @@
           %li= msg
 
   .field
-    = f.label :name
+    .quicksand= f.label :name
     = f.text_field :name
   .field
-    = f.label :surname
+    .quicksand= f.label :surname
     = f.text_field :surname
   .field
-    = f.label :gender
+    .quicksand= f.label :gender
     = f.text_field :gender
   .field
-    = f.label :age
+    .quicksand= f.label :age
     = f.number_field :age
   .field
-    = f.label :image
+    .quicksand= f.label :image
     = image_tag(@personal_info.image.thumb.url) if @personal_info.image?
     = f.file_field :image
     = f.hidden_field :image_cache
   .field
-    = f.label :country
+    .quicksand= f.label :country
     = f.text_field :country
   .field
-    = f.label :marital_status
+    .quicksand= f.label :marital_status
     = f.text_field :marital_status
   .field
-    = f.label :credo
+    .quicksand= f.label :credo
     = f.text_field :credo
   .field
-    = f.label :religion
+    .quicksand= f.label :religion
     = f.text_field :religion
   .field
-    = f.label :political_views
+    .quicksand= f.label :political_views
     = f.text_field :political_views
   .field
-    = f.label :smf_more
+    .quicksand= f.label :smf_more
     = f.text_field :smf_more
   .actions
-    = f.submit 'Save'
+    .quicksand= f.submit 'Save'
