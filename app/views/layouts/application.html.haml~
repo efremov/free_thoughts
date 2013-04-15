@@ -53,6 +53,7 @@
                               = f.check_box :remember_me
                               = f.label :remember
                             = f.submit 'Log in'        
+                      %li= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)
     
     #myCarousel.carousel.slide
       .carousel-inner
@@ -114,7 +115,7 @@
         .shadow    
           %p.pull-right
             %a{:href =>"#", :style => "background-color: inherit;"} Back to top
-          %p &copy; 2013 Company, Inc. &middot; <a href="#" style="background-color: inherit;">Privacy</a> &middot; <a href="#">Terms</a>
+          %p &copy; 2013 Company, Inc. &middot; <a href="#" style="background-color: inherit;">Privacy</a> &middot; <a href="#"style="background-color: inherit;" >Terms</a>
           
       
      

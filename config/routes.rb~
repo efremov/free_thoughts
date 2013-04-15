@@ -1,6 +1,6 @@
 FreeThought::Application.routes.draw do
 
-  post 'great_thought' => 'greatthoughts#create'
+  post 'great_thought' => 'great_thoughts#create'
   get 'best_quastions' => "quastions#best_quastions"
   get 'best_thoughts' => "thoughts#best_thoughts_ever"
   resources :quastions do
@@ -11,7 +11,11 @@ FreeThought::Application.routes.draw do
     end
   end
 
-  devise_for :users
+  devise_for :users, controllers:  { omniauth_callbacks: "users/omniauth_callbacks"}
+  devise_scope :user do
+    get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
+  end
+  
   
   resources :users do 
     resources :personal_infos do

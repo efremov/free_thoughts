@@ -44,15 +44,15 @@
                   %li.dropdown
                     %a.dropdown-toggle{ :href=> "#", "data-toggle" => "dropdown"} Sign in
                     %ul.dropdown-menu
-                      %li
-                        = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-                          = f.email_field :email, :autofocus => true, :placeholder => "Email"
-                          = f.password_field :password, :placeholder => "Password"
-                          - if devise_mapping.rememberable?
-                            .field
-                              = f.check_box :remember_me
-                              = f.label :remember
-                            = f.submit 'Log in'        
+                      = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+                        = f.email_field :email, :autofocus => true, :placeholder => "Email"
+                        = f.password_field :password, :placeholder => "Password"
+                        - if devise_mapping.rememberable?
+                          .field
+                            = f.check_box :remember_me
+                            = f.label :remember
+                          = f.submit 'Log in'        
+                      %li= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)
     
     #myCarousel.carousel.slide
       .carousel-inner

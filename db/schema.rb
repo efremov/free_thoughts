@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130407110123) do
+ActiveRecord::Schema.define(:version => 20130415120256) do
 
   create_table "agree_quastions", :force => true do |t|
     t.integer  "quastion_id"
@@ -121,6 +121,7 @@ ActiveRecord::Schema.define(:version => 20130407110123) do
     t.string   "last_sign_in_ip"
     t.integer  "rate",                   :default => 100
     t.boolean  "visible",                :default => true
+    t.string   "uid"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
