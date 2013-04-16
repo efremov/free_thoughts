@@ -3,8 +3,7 @@
     = bootstrap_flash
     - @quastions.each do |quastion|
       .hero-unit.box-shadow.niagare
-        .imag
-          = image_tag(quastion.image.thumb2)
+        = image_tag(quastion.image.thumb2)
         .quastion-box
           %h1.tangerine= quastion.discription
           %h3.tangerine= quastion.topic
