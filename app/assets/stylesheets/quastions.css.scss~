@@ -75,7 +75,7 @@
     background-color: transparent;
     position: absolute;
     z-index: 2;
-    bottom: 50px;
+    bottom: 80px;
     left: 50px;
     max-width: 80%;
     }

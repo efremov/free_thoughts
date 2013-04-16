@@ -84,7 +84,7 @@
                 %h1.tangerine= @best_thoughts[2].point
                 %a.btn.btn-large.btn-primary.quicksand1{:href => best_thoughts_path} Best thoughts
         .item
-          = image_tag('images2.jpeg')
+          = image_tag('stockvault-kaghan-valley112534.jpg')
           .container
             .carousel-captionp
               - unless @best_thoughts[3] == nil

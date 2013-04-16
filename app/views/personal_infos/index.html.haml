@@ -43,17 +43,21 @@
 
       - if current_user == @user 
         .shadow
-          .sansation= link_to 'Edit', edit_user_personal_info_path(current_user, @personal_info)
+          .sansation
+          %a{:href =>"#{edit_user_personal_info_path(current_user, @personal_info)}", :style => "background-color: inherit;"} Edit 
       .shadow
-        .sansation= link_to 'Back', quastions_path
+        .sansation
+          %a{:href =>"#{quastions_path}", :style => "background-color: inherit;"} Back
       - unless @user == current_user
-        - if @pesronal_info
+        - if @personal_info
           - if current_user.folowers.where(thinker_id: @user.id) == []
             .shadow
-              .sansation= link_to 'Follow', user_personal_info_folowers_path(@user, @personal_info), method: :post
+              .sansation
+                %a{:href =>"#{user_personal_info_folowers_path(@user,@personal_info,@folower)}", :style => "background-color: inherit;", 'data-method' => 'post'} Follow
           - else
             .shadow
-              .sansation= link_to 'Unfollow', user_personal_info_folower_path(@user,@personal_info,@folower), method: :delete
+              .sansation
+                %a{:href =>"#{user_personal_info_folower_path(@user,@personal_info,@folower)}", :style => "background-color: inherit;", 'data-method' => 'delete'} Unfollow
   .span8
     .tabbables.tabs-right.box-shadow
       %ul.nav.nav-tabs
@@ -71,7 +75,8 @@
           - @users_thought.each do |user_thought| 
             .featurette.best_quastions
               - if user_thought.quastion
-                %h2.sansation= link_to user_thought.quastion.discription,quastion_path(user_thought.quastion)
+                %h2.sansation
+                  %a{:href =>"#{quastion_path(user_thought.quastion)}", :style => "background-color: inherit;"} #{user_thought.quastion.discription}
               %blockquote
                 %strong.featurette-heading.tangerine= user_thought.point
                 %h4.sansation= user_thought.rate
@@ -81,7 +86,8 @@
           - @users_quastions.each do |user_quastion|           
             .featurette.best_quastions
               - if user_quastion.quastion
-                %strong.featurette-heading.sansation= link_to user_quastion.quastion.discription, quastion_path(user_quastion.quastion)
+                %h2.sansation
+                  %a{:href =>"#{quastion_path(user_quastion.quastion)}", :style => "background-color: inherit;"} #{user_quastion.quastion.discription} 
                 %blockquote
                   %h2.tangerine= user_quastion.point
                   %h4.sansation= user_quastion.rate
@@ -92,9 +98,11 @@
             - @thinker = User.find(folower.thinker_id)
             - if @thinker.personal_info
               .featurette.best_quastions
-                %em.lead= link_to @thinker.personal_info.name , user_personal_infos_path(@thinker)
+                %em.lead
+                  %a{:href =>"#{user_personal_infos_path(@thinker)}", :style => "background-color: inherit;"} #{@thinker.personal_info.name}  
                 %blockquote
-                  %h3.tangerine= link_to @thinker.thoughts.last.point, quastion_path(@thinker.thoughts.last.quastion)
+                  %h3.tangerine
+                    %a{:href =>"#{quastion_path(@thinker.thoughts.last.quastion)}", :style => "background-color: inherit;"} #{@thinker.thoughts.last.point} 
             %hr.featurette-divider 
           
             
