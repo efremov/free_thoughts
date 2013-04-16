@@ -27,9 +27,9 @@
       format('truetype');
     }
     @font-face {
-    font-family: "Sansation_Regular"
-    src: url('Sansation_Regular.ttf')
-    format('truetype')
+      font-family: "Sansation_Regular";
+      src: url('Sansation_Regular.ttf')
+      format('truetype');
     }
 
    body {
