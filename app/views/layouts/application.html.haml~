@@ -30,8 +30,8 @@
               Free thoughts 
             - if current_user
               - if current_user.personal_info             
-                .sansation1.navbar-text.pull-right{:style => "margin-right: 10px;"} Logged in as #{link_to current_user.personal_info.name, user_personal_infos_path(current_user)}  
-            .nav-collapse.collapse
+                .sansation1.navbar-text.pull-right{:style => "margin-right: 10px;"} Logged in as  <a href='#{user_personal_infos_path(current_user)}' style="background-color: inherit;">#{current_user.personal_info.name}</a>  
+            .nav-collapse.collapse                                                     
               %ul.nav
                 - if user_signed_in?
                   %li= link_to "Your personal information", user_personal_infos_path(current_user)  
