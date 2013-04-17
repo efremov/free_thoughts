@@ -11,8 +11,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end     
   end
 
-  def vkontakte
-  end
   
   def passthru
     render :file => "#{Rails.root}/public/404.html", :status => 404, :layout => false
