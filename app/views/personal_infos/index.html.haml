@@ -11,52 +11,52 @@
             .pers    
               %dl.dl-horizontal
                 - unless @personal_info.name == ""
-                  %dt.shadow-str.sansation Name:
+                  %dt.shadow-str.sansation-sm Name:
                   %dd.sansation= @personal_info.name
                 - unless @personal_info.surname == ""
-                  %dt.shadow-str.sansation Surname:
+                  %dt.shadow-str.sansation-sm Surname:
                   %dd.sansation= @personal_info.surname
                 - unless @personal_info.gender == ""
-                  %dt.shadow-str.sansation Sex:
+                  %dt.shadow-str.sansation-sm Sex:
                   %dd.sansation= @personal_info.gender
                 - unless @personal_info.age == nil
-                  %dt.shadow-str.sansation Age:
+                  %dt.shadow-str.sansation-sm Age:
                   %dd.sansation= @personal_info.age
                 - unless @personal_info.country == ""
-                  %dt.shadow-str.sansation Country:
+                  %dt.shadow-str.sansation-sm Country:
                   %dd.sansation= @personal_info.country
                 - unless @personal_info.marital_status == ""
-                  %dt.shadow-str.sansation Marital status:
+                  %dt.shadow-str.sansation-sm Marital status:
                   %dd.sansation= @personal_info.marital_status
                 - unless @personal_info.credo == ""
-                  %dt.shadow-str.sansation Credo:
+                  %dt.shadow-str.sansation-sm Credo:
                   %dd.sansation= @personal_info.credo
                 - unless @personal_info.religion == ""
-                  %dt.shadow-str.sansation Religion:
+                  %dt.shadow-str.sansation-sm Religion:
                   %dd.sansation= @personal_info.religion
                 - unless @personal_info.political_views == ""
-                  %dt.shadow-str.sansation Political views:
+                  %dt.shadow-str.sansation-sm Political views:
                   %dd.sansation= @personal_info.political_views
                 - unless @personal_info.smf_more == ""
-                  %dt.shadow-str.sansation Whatever about you:
+                  %dt.shadow-str.sansation-sm Whatever about you:
                   %dd.sansation= @personal_info.smf_more
 
       - if current_user == @user 
         .shadow
-          .sansation
-          %a{:href =>"#{edit_user_personal_info_path(current_user, @personal_info)}", :style => "background-color: inherit;"} Edit 
+          .sansation-sm
+            %a{:href =>"#{edit_user_personal_info_path(current_user, @personal_info)}", :style => "background-color: inherit;"} Edit 
       .shadow
-        .sansation
+        .sansation-sm
           %a{:href =>"#{quastions_path}", :style => "background-color: inherit;"} Back
       - unless @user == current_user
         - if @personal_info
           - if current_user.folowers.where(thinker_id: @user.id) == []
             .shadow
-              .sansation
+              .sansation-sm
                 %a{:href =>"#{user_personal_info_folowers_path(@user,@personal_info,@folower)}", :style => "background-color: inherit;", 'data-method' => 'post'} Follow
           - else
             .shadow
-              .sansation
+              .sansation-sm
                 %a{:href =>"#{user_personal_info_folower_path(@user,@personal_info,@folower)}", :style => "background-color: inherit;", 'data-method' => 'delete'} Unfollow
   .span8
     .tabbables.tabs-right.box-shadow
@@ -75,34 +75,36 @@
           - @users_thought.each do |user_thought| 
             .featurette.best_quastions
               - if user_thought.quastion
-                %h2.sansation
+                %h2.sansation-sm
                   %a{:href =>"#{quastion_path(user_thought.quastion)}", :style => "background-color: inherit;"} #{user_thought.quastion.discription}
               %blockquote
                 %strong.featurette-heading.tangerine= user_thought.point
-                %h4.sansation= user_thought.rate
+                %h4.sansation-sm= user_thought.rate
               %hr.featurette-divider 
           = will_paginate @users_thought
         #tab2.tab-pane
           - @users_quastions.each do |user_quastion|           
             .featurette.best_quastions
               - if user_quastion.quastion
-                %h2.sansation
+                %h2.sansation-sm
                   %a{:href =>"#{quastion_path(user_quastion.quastion)}", :style => "background-color: inherit;"} #{user_quastion.quastion.discription} 
                 %blockquote
                   %h2.tangerine= user_quastion.point
-                  %h4.sansation= user_quastion.rate
+                  %h4.sansation-sm= user_quastion.rate
                 %hr.featurette-divider   
           = will_paginate @users_quastions
         #tab3.tab-pane
           - @folowers.each do |folower|
             - @thinker = User.find(folower.thinker_id)
-            - if @thinker.personal_info
-              .featurette.best_quastions
-                %em.lead
-                  %a{:href =>"#{user_personal_infos_path(@thinker)}", :style => "background-color: inherit;"} #{@thinker.personal_info.name}  
-                %blockquote
-                  %h3.tangerine
-                    %a{:href =>"#{quastion_path(@thinker.thoughts.last.quastion)}", :style => "background-color: inherit;"} #{@thinker.thoughts.last.point} 
+            - if @thinker
+              - if @thinker.personal_info
+                .featurette.best_quastions
+                  %em.lead
+                    %a{:href =>"#{user_personal_infos_path(@thinker)}", :style => "background-color: inherit;"} #{@thinker.personal_info.name}  
+                  - if @thinker.thoughts.last
+                    %blockquote
+                      %h3.tangerine
+                        %a{:href =>"#{quastion_path(@thinker.thoughts.last.quastion)}", :style => "background-color: inherit;"} #{@thinker.thoughts.last.point} 
             %hr.featurette-divider 
           
             
