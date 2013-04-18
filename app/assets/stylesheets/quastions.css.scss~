@@ -30,7 +30,7 @@
       letter-spacing: -1px;
     }
      .new_quastion{
-        max-width: 300px;
+        max-width: 100%;
         padding: 19px 29px 29px;
         margin: 0 auto 20px;
         background-color: inherit;

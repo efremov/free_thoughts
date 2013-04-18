@@ -1,6 +1,5 @@
-%h1.shadow1.quicksand Editing personal information
-
-= render 'form'
-
-
-.shadow.sansation= link_to 'Back', user_personal_infos_path(current_user)
+.row-fluid
+  .span5.offset4.box-shadow
+    %h1.shadow1.sansation1 Editing personal information
+    = render 'form'
+    .shadow.sansation= link_to 'Back', user_personal_infos_path(current_user)

@@ -1,6 +1,6 @@
 - best_quastions.each do |best_quastion|
-  .featurette.best_quastions.box-shadow
-    %h2.featurette-heading.sansation 
+  %h2.featurette1.best_quastions.box-shadow
+    %h2.featurette-heading.sansation1
       %a{:href =>"#{quastion_path(best_quastion)}", :style => "background-color: inherit;"} #{best_quastion.discription} 
     - best_quastion.thoughts.order(:rate).limit(3).each do |best_thought|
       %blockquote
@@ -8,5 +8,6 @@
         - if best_thought.user
           - if best_thought.user.visible
             - if best_thought.user.personal_info
-              %h4.sansation= link_to best_thought.user.personal_info.name, user_personal_infos_path(best_thought.user)
-  %hr.featurette-divider   
+              %h4.sansation1
+                %a{:href =>"#{user_personal_infos_path(best_thought.user)}", :style => "background-color: inherit;"} #{best_thought.user.personal_info.name}
+              

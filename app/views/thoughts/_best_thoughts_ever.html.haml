@@ -1,14 +1,14 @@
 - best_thoughts_ever.each do |best_thought| 
   .featurette.best_quastions.box-shadow
     - if best_thought.quastion
-      %h2.sansation
+      %h2.sansation1
         %a{:href =>"#{quastion_path(best_thought.quastion)}", :style => "background-color: inherit;"} #{best_thought.quastion.discription} 
     %blockquote
       %h2.featurette-heading.tangerine= best_thought.point
       - if best_thought.user
         - if best_thought.user.visible
           - if best_thought.user.personal_info 
-            %h4.sansation.shadow-str
+            %h4.sansation1.shadow-str
               %a{:href =>"#{user_personal_infos_path(best_thought.user)}", :style => "background-color: inherit;"} #{best_thought.user.personal_info.name} 
   %hr.featurette-divider
   
