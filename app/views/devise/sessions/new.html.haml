@@ -1,0 +1,14 @@
+.row-fluid
+  .span4.offset4.box-shadow
+    %h2.sansation1 Sign in
+
+    = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+      .field
+        .sansation1= f.email_field :email, :autofocus => true, :placeholder => "Email"
+      .field
+        .sansation1= f.password_field :password, :placeholder => "Password"
+      - if devise_mapping.rememberable?
+        = f.check_box :remember_me
+        .sansation1= f.label :remember
+      %button.btn.btn-primary.sansation1{ :type => "submit" } Log in        
+    .sansation1= render "devise/shared/links"
