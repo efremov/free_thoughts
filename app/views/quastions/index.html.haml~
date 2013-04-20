@@ -23,9 +23,9 @@
                   %li= msg
             %container
               %field
-                %legend.shadow.sansation Ask your quastion
+                %legend.shadow.sansation1 Ask your quastion
                 = f.text_field :discription, :placeholder => "Your quastion"
-                %h3.help-block.tangerine Feel free to ask your quastion
+                %h2.help-block.tangerine Feel free to ask your quastion
                 = f.text_field :topic, :placeholder => "Topic", :size => 100
                 %button.btn.btn-primary.sansation{ :type => "submit" }Submit
       .tabbable

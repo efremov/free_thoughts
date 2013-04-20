@@ -10,4 +10,6 @@
             - if best_thought.user.personal_info
               %h4.sansation1
                 %a{:href =>"#{user_personal_infos_path(best_thought.user)}", :style => "background-color: inherit;"} #{best_thought.user.personal_info.name}
+          - else
+            %h4.sansation1 Somebody
               

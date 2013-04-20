@@ -2,14 +2,16 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   before_filter :authenticate_user! , :except => :index
-  skip_before_filter :admin, :except => :index
-  before_filter :user_info, :only => [:show, :edit, :destroy, :update]
+  skip_before_filter :admin, :except => [:index, :edit, :destroy, :update]
+  before_filter :user_info, :only => :show
   
   def user_info
     unless User.find(params[:id]) == current_user
       redirect_to quastions_path
     end
   end
+  
+  
   
   
   def index

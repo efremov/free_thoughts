@@ -7,7 +7,7 @@
     .btn-group.pull-right
     - if current_user
       - if quastion.can_agree(current_user) or current_user == User.find(1)
-        .btn.btn-small
-          .quicksand1= link_to 'Agree', incriment_quastion_path(quastion), :method => :post, :remote => true
+        .btn.btn-primary
+          .sansation= link_to 'Agree', incriment_quastion_path(quastion), :method => :post, :remote => true
           - if current_user == User.find(1)
-            .quicksand= link_to 'Delete', quastion_path(quastion), :method => :delete
+            .sansation= link_to 'Delete', quastion_path(quastion), :method => :delete
