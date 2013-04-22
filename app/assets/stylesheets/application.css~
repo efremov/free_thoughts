@@ -16,7 +16,13 @@
     -------------------------------------------------- */
     /* Padding below the footer and lighter body text */
     .sign-in img {
-      width: 7%;
+      width: 10%;
+    }
+    .sign-in form {
+       margin: 8px 0px 20px;
+    }
+    .sign-in {
+      background-color: inherit;
     }
     
     

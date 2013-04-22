@@ -38,7 +38,7 @@
                 %li.sansation1= link_to "Best quastions", best_quastions_path                
                 %li.sansation1= link_to "Best thoughts", best_thoughts_path
                 - if user_signed_in?  
-                  %li .sansation1= link_to "Sign out", destroy_user_session_path, :method => :delete
+                  %li.sansation1= link_to "Sign out", destroy_user_session_path, :method => :delete
                 - else
                   %li.sansation1= link_to "Sign up", new_user_registration_path  
                   %li.dropdown
@@ -51,13 +51,11 @@
                               = f.email_field :email, :autofocus => true, :placeholder => "Email"
                             .field
                               = f.password_field :password, :placeholder => "Password"
-                            - if devise_mapping.rememberable?
-                              = f.check_box :remember_me
-                              = f.label :remember
                               %button.btn.btn-primary.sansation{ :type => "submit" } Log in        
-                        %li.sansation1
+                        %li.divider
+                        %li
                           = image_tag('facebook_02_8149.ico')
-                          = link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)
+                          %a.sansation1{:href => user_omniauth_authorize_path(:facebook) , :style => "background-color: transparent;"} Sign in with Facebook
     
     #myCarousel.carousel.slide
       .carousel-inner
@@ -119,7 +117,7 @@
         .shadow    
           %p.pull-right
             %a{:href =>"#", :style => "background-color: inherit;"} Back to top
-          %p &copy; 2013 Company, Inc. &middot; <a href="#" style="background-color: inherit;">Privacy</a> &middot; <a href="#"style="background-color: inherit;" >Terms</a>
+          %p &copy; 2013 Efremov &middot; <a href="#" style="background-color: inherit;">Privacy</a> &middot; <a href="#"style="background-color: inherit;" >Terms</a>
           
       
      
