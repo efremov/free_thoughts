@@ -44,20 +44,20 @@
       - if current_user == @user 
         .shadow
           .sansation-sm
-            %a{:href =>"#{edit_user_personal_info_path(current_user, @personal_info)}", :style => "background-color: inherit;"} Edit 
+            %a{:href =>"#{edit_user_personal_info_path(current_user, @personal_info)}", :style => "background-color: inherit; color: inherit"} Edit 
       .shadow
         .sansation-sm
-          %a{:href =>"#{quastions_path}", :style => "background-color: inherit;"} Back
+          %a{:href =>"#{quastions_path}", :style => "background-color: inherit; color: inherit"} Back
       - unless @user == current_user
         - if @personal_info
           - if current_user.folowers.where(thinker_id: @user.id) == []
             .shadow
               .sansation-sm
-                %a{:href =>"#{user_personal_info_folowers_path(@user,@personal_info,@folower)}", :style => "background-color: inherit;", 'data-method' => 'post'} Follow
+                %a{:href =>"#{user_personal_info_folowers_path(@user,@personal_info,@folower)}", :style => "background-color: inherit; color: inherit", 'data-method' => 'post'} Follow
           - else
             .shadow
               .sansation-sm
-                %a{:href =>"#{user_personal_info_folower_path(@user,@personal_info,@folower)}", :style => "background-color: inherit;", 'data-method' => 'delete'} Unfollow
+                %a{:href =>"#{user_personal_info_folower_path(@user,@personal_info,@folower)}", :style => "background-color: inherit; color: inherit", 'data-method' => 'delete'} Unfollow
   .span8
     .tabbables.tabs-right.box-shadow
       %ul.nav.nav-tabs
@@ -100,7 +100,7 @@
               - if @thinker.personal_info
                 .featurette.best_quastions
                   %em.lead
-                    %a{:href =>"#{user_personal_infos_path(@thinker)}", :style => "background-color: inherit;"} #{@thinker.personal_info.name}  
+                    %a{:href =>"#{user_personal_infos_path(@thinker)}", :style => "background-color: inherit; color: inherit"} #{@thinker.personal_info.name}  
                   - if @thinker.thoughts.last
                     %blockquote
                       %h3.tangerine
